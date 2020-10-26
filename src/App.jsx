@@ -5,11 +5,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { PokemonFeedProvider } from "~/context";
 import { Home, Pokemon } from "~/pages";
 import { NavBar } from "~/components";
-import "./App.sass";
+import "~/styles/index.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="font-body h-full flex flex-col">
       <PokemonFeedProvider>
         <Router>
           <NavBar />

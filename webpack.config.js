@@ -13,8 +13,24 @@ module.exports = {
         options: { presets: ["@babel/env"] },
       },
       {
-        test: /\.(s[ac]|c)ss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                ident: "postcss",
+                plugins: [
+                  require("postcss-import"),
+                  require("tailwindcss"),
+                  require("postcss-preset-env")({ stage: 1 }),
+                ],
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,

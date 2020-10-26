@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import PokemonLogo from "~/assets/img/pokemon-logo.png";
-import styles from "./styles.module.sass";
 
 export default function NavBar() {
   const location = useLocation();
