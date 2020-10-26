@@ -1,12 +1,28 @@
 import "react-hot-loader";
-import React from "react";
 import { hot } from "react-hot-loader/root";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { PokemonFeedProvider } from "~/context";
+import { Home, Pokemon } from "~/pages";
+import { NavBar } from "~/components";
+import "./App.sass";
 
 function App() {
   return (
     <div className="App">
-      <h1> Hello, World!!!! </h1>
+      <PokemonFeedProvider>
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route path="/pokemon/:id">
+              <Pokemon />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </Router>
+      </PokemonFeedProvider>
     </div>
   );
 }
