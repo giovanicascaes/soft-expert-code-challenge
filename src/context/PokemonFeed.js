@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useReducer } from "react";
+import React, { useContext, useMemo, useReducer, useCallback } from "react";
 import { api } from "~/services";
 import { Request } from "~/config";
 
@@ -12,10 +12,8 @@ const InitialState = {
   loading: false,
   error: false,
   success: false,
-  count: 0,
-  next: null,
-  previous: null,
-  results: [],
+  pokemons: [],
+  more: false,
 };
 
 function reducer(state, action) {
@@ -34,7 +32,8 @@ function reducer(state, action) {
         ...state,
         loading: false,
         success: true,
-        ...action.payload,
+        pokemons: [...state.pokemons, ...action.payload.results],
+        more: !!action.payload.next,
       };
     }
     case Actions.REQUEST_ERROR: {
@@ -53,15 +52,19 @@ function reducer(state, action) {
 function usePokemonFeedProvider() {
   const [state, dispatch] = useReducer(reducer, InitialState);
 
-  async function getPokemons() {
+  const getPokemons = useCallback(async () => {
     try {
       dispatch({ type: Actions.REQUEST_INIT });
-      const pokemons = await api.get("/pokemon", {
+      const result = await api.get("/pokemon", {
         data: {
           limit: Request.DEFAULT_LIMIT,
+          offset: state.pokemons.length,
         },
       });
-      dispatch({ type: Actions.POKEMONS_FETCHED, payload: pokemons });
+      dispatch({
+        type: Actions.POKEMONS_FETCHED,
+        payload: result,
+      });
     } catch (e) {
       dispatch({
         type: Actions.REQUEST_ERROR,
@@ -69,13 +72,13 @@ function usePokemonFeedProvider() {
           "An error ocurred listing pokémons. Probably they are in the middle of a battle...",
       });
     }
-  }
+  }, [state.pokemons.length]);
 
   const actions = useMemo(
     () => ({
       getPokemons,
     }),
-    []
+    [getPokemons]
   );
   const value = useMemo(() => [state, actions], [state, actions]);
   return value;
