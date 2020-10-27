@@ -4,11 +4,17 @@
   "description": "A Pokedex web app for SoftExpert code challenge",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build:css && webpack serve --mode development --hot",
-    "build": "webpack --mode development",
-    "build:css": "postcss src/styles/main.css -o src/styles/index.css"
+    "serve-webpack": "webpack serve --mode development --hot",
+    "build-webpack": "webpack --mode development",
+    "build-css": "postcss src/styles/index.css -o src/assets/css/index.css",
+    "watch-css": "postcss -w src/styles/index.css -o src/assets/css/index.css",
+    "startAndWatchCss": "concurrently 'npm:watch-css' 'npm:serve-webpack'"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
+    "concurrently": "^5.3.0",
     "postcss-cli": "^8.1.0",
     "postcss-import": "^13.0.0",
     "postcss-preset-env": "^6.7.0",
