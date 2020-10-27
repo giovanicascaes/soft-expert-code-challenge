@@ -1,0 +1,5 @@
+@layer components {
+  .badge {
+    @apply inline-block border border-blue-500 rounded-full px-3 text-xs text-blue-500;
+  }
+}
