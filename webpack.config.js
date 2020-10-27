@@ -14,23 +14,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                ident: "postcss",
-                plugins: [
-                  require("postcss-import"),
-                  require("tailwindcss"),
-                  require("postcss-preset-env")({ stage: 1 }),
-                ],
-              },
-            },
-          },
-        ],
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
@@ -58,6 +42,7 @@ module.exports = {
     port: 3000,
     publicPath: "http://localhost:3000/dist/",
     hotOnly: true,
+    historyApiFallback: true
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
 };
