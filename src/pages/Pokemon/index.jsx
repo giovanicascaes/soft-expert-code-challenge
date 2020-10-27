@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { usePokemonDetails } from "~/context";
 import { Loading, Badge } from "~/components";
-import { capitalize } from "~/utils";
+import { capitalize, classNames } from "~/utils";
+import styles from "./styles.module.css";
 
 export default function Pokemon({ match }) {
   const [state, actions] = usePokemonDetails();
@@ -30,13 +31,34 @@ export default function Pokemon({ match }) {
     <div className="flex flex-col items-center py-8 overflow-y-auto">
       <div className="w-3/5 flex flex-col items-center pt-20">
         <span className="text-4xl font-light">{capitalize(name)}</span>
-        <img
-          className="w-64 mt-8"
-          src={flip ? sprites.back_default : sprites.front_default}
-          alt={`${capitalize(name)}'s ${flip ? "back" : "front"} image`}
-        />
+        <div
+          className={classNames(
+            "mt-8 w-64 h-64 relative",
+            styles.flipWrapper,
+            flip ? styles.flip : null
+          )}
+        >
+          <div className={styles.flipper}>
+            <img
+              className={classNames(
+                "w-64 h-64 absolute top-0 left-0 z-10",
+                styles.front
+              )}
+              src={sprites.front_default}
+              alt={`${capitalize(name)}'s front image`}
+            />
+            <img
+              className={classNames(
+                "w-64 h-64 absolute top-0 left-0",
+                styles.back
+              )}
+              src={sprites.back_default}
+              alt={`${capitalize(name)}'s back image`}
+            />
+          </div>
+        </div>
         <button
-          className="w-8 h-8 text-gray-600 hover:text-gray-800 mt-4"
+          className="w-8 h-8 text-gray-700 hover:text-gray-800 mt-4"
           onClick={() => setFlip((f) => !f)}
         >
           <FontAwesomeIcon icon="sync" />
