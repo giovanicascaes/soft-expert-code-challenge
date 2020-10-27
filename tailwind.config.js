@@ -23,7 +23,7 @@ module.exports = {
         "flat-inner": "inset 0 2px 0 0 rgba(0, 0, 0, 0.06)",
       },
       textColor: {
-        "yellow-550": "#DDB236",
+        "yellow-pokemon": "#F7CC05",
       },
     },
   },
