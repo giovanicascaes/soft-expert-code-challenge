@@ -14752,12 +14752,6 @@ video {
   color: rgba(112, 36, 89, var(--text-opacity));
 }
 
-.text-yellow-pokemon{
-  --text-opacity: 1;
-  color: #F7CC05;
-  color: rgba(247, 204, 5, var(--text-opacity));
-}
-
 .hover\:text-transparent:hover{
   color: transparent;
 }
@@ -15318,12 +15312,6 @@ video {
   color: rgba(112, 36, 89, var(--text-opacity));
 }
 
-.hover\:text-yellow-pokemon:hover{
-  --text-opacity: 1;
-  color: #F7CC05;
-  color: rgba(247, 204, 5, var(--text-opacity));
-}
-
 .focus\:text-transparent:focus{
   color: transparent;
 }
@@ -15882,12 +15870,6 @@ video {
   --text-opacity: 1;
   color: #702459;
   color: rgba(112, 36, 89, var(--text-opacity));
-}
-
-.focus\:text-yellow-pokemon:focus{
-  --text-opacity: 1;
-  color: #F7CC05;
-  color: rgba(247, 204, 5, var(--text-opacity));
 }
 
 .text-opacity-0{
@@ -33476,12 +33458,6 @@ video {
     color: rgba(112, 36, 89, var(--text-opacity));
   }
 
-  .sm\:text-yellow-pokemon{
-    --text-opacity: 1;
-    color: #F7CC05;
-    color: rgba(247, 204, 5, var(--text-opacity));
-  }
-
   .sm\:hover\:text-transparent:hover{
     color: transparent;
   }
@@ -34042,12 +34018,6 @@ video {
     color: rgba(112, 36, 89, var(--text-opacity));
   }
 
-  .sm\:hover\:text-yellow-pokemon:hover{
-    --text-opacity: 1;
-    color: #F7CC05;
-    color: rgba(247, 204, 5, var(--text-opacity));
-  }
-
   .sm\:focus\:text-transparent:focus{
     color: transparent;
   }
@@ -34606,12 +34576,6 @@ video {
     --text-opacity: 1;
     color: #702459;
     color: rgba(112, 36, 89, var(--text-opacity));
-  }
-
-  .sm\:focus\:text-yellow-pokemon:focus{
-    --text-opacity: 1;
-    color: #F7CC05;
-    color: rgba(247, 204, 5, var(--text-opacity));
   }
 
   .sm\:text-opacity-0{
@@ -52170,12 +52134,6 @@ video {
     color: rgba(112, 36, 89, var(--text-opacity));
   }
 
-  .md\:text-yellow-pokemon{
-    --text-opacity: 1;
-    color: #F7CC05;
-    color: rgba(247, 204, 5, var(--text-opacity));
-  }
-
   .md\:hover\:text-transparent:hover{
     color: transparent;
   }
@@ -52736,12 +52694,6 @@ video {
     color: rgba(112, 36, 89, var(--text-opacity));
   }
 
-  .md\:hover\:text-yellow-pokemon:hover{
-    --text-opacity: 1;
-    color: #F7CC05;
-    color: rgba(247, 204, 5, var(--text-opacity));
-  }
-
   .md\:focus\:text-transparent:focus{
     color: transparent;
   }
@@ -53300,12 +53252,6 @@ video {
     --text-opacity: 1;
     color: #702459;
     color: rgba(112, 36, 89, var(--text-opacity));
-  }
-
-  .md\:focus\:text-yellow-pokemon:focus{
-    --text-opacity: 1;
-    color: #F7CC05;
-    color: rgba(247, 204, 5, var(--text-opacity));
   }
 
   .md\:text-opacity-0{
@@ -70864,12 +70810,6 @@ video {
     color: rgba(112, 36, 89, var(--text-opacity));
   }
 
-  .lg\:text-yellow-pokemon{
-    --text-opacity: 1;
-    color: #F7CC05;
-    color: rgba(247, 204, 5, var(--text-opacity));
-  }
-
   .lg\:hover\:text-transparent:hover{
     color: transparent;
   }
@@ -71430,12 +71370,6 @@ video {
     color: rgba(112, 36, 89, var(--text-opacity));
   }
 
-  .lg\:hover\:text-yellow-pokemon:hover{
-    --text-opacity: 1;
-    color: #F7CC05;
-    color: rgba(247, 204, 5, var(--text-opacity));
-  }
-
   .lg\:focus\:text-transparent:focus{
     color: transparent;
   }
@@ -71994,12 +71928,6 @@ video {
     --text-opacity: 1;
     color: #702459;
     color: rgba(112, 36, 89, var(--text-opacity));
-  }
-
-  .lg\:focus\:text-yellow-pokemon:focus{
-    --text-opacity: 1;
-    color: #F7CC05;
-    color: rgba(247, 204, 5, var(--text-opacity));
   }
 
   .lg\:text-opacity-0{
@@ -89558,12 +89486,6 @@ video {
     color: rgba(112, 36, 89, var(--text-opacity));
   }
 
-  .xl\:text-yellow-pokemon{
-    --text-opacity: 1;
-    color: #F7CC05;
-    color: rgba(247, 204, 5, var(--text-opacity));
-  }
-
   .xl\:hover\:text-transparent:hover{
     color: transparent;
   }
@@ -90124,12 +90046,6 @@ video {
     color: rgba(112, 36, 89, var(--text-opacity));
   }
 
-  .xl\:hover\:text-yellow-pokemon:hover{
-    --text-opacity: 1;
-    color: #F7CC05;
-    color: rgba(247, 204, 5, var(--text-opacity));
-  }
-
   .xl\:focus\:text-transparent:focus{
     color: transparent;
   }
@@ -90688,12 +90604,6 @@ video {
     --text-opacity: 1;
     color: #702459;
     color: rgba(112, 36, 89, var(--text-opacity));
-  }
-
-  .xl\:focus\:text-yellow-pokemon:focus{
-    --text-opacity: 1;
-    color: #F7CC05;
-    color: rgba(247, 204, 5, var(--text-opacity));
   }
 
   .xl\:text-opacity-0{

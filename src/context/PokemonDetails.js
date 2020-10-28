@@ -60,8 +60,11 @@ function usePokemonDetailsProvider() {
     } catch (e) {
       dispatch({
         type: Actions.REQUEST_ERROR,
-        payload:
-          "An error ocurred getting pokemon details. Probably it has fleeded...",
+        payload: {
+          message:
+            "An error ocurred getting pokemon details. Probably it has fleeded...",
+          status: e.status,
+        },
       });
     }
   }, []);

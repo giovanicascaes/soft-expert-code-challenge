@@ -5,6 +5,7 @@ import {
   LoadingMore,
   IntersetctionOberverWrapper,
 } from "~/components";
+import Layout from "../Layout";
 import { Item } from "./components";
 
 export default function Home() {
@@ -31,24 +32,26 @@ export default function Home() {
   }
 
   return (
-    <IntersetctionOberverWrapper
-      threshold={0.5}
-      observableEl={lastItemEl}
-      observeCallback={loadingMoreObserveCallback}
-    >
-      <div className="flex flex-col items-center py-4 overflow-y-auto">
-        {state.pokemons.map(({ name }, i) => {
-          const isLast = i === state.pokemons.length - 1;
-          return (
-            <Item
-              key={name}
-              {...{ name }}
-              ref={isLast ? lastItemRef : undefined}
-            />
-          );
-        })}
-        {state.more && state.loading && <LoadingMore />}
-      </div>
-    </IntersetctionOberverWrapper>
+    <Layout>
+      <IntersetctionOberverWrapper
+        threshold={0.5}
+        observableEl={lastItemEl}
+        observeCallback={loadingMoreObserveCallback}
+      >
+        <div className="flex flex-col items-center py-4 overflow-y-auto">
+          {state.pokemons.map(({ name }, i) => {
+            const isLast = i === state.pokemons.length - 1;
+            return (
+              <Item
+                key={name}
+                {...{ name }}
+                ref={isLast ? lastItemRef : undefined}
+              />
+            );
+          })}
+          {state.more && state.loading && <LoadingMore />}
+        </div>
+      </IntersetctionOberverWrapper>
+    </Layout>
   );
 }

@@ -34,6 +34,7 @@ async function request(url, params = {}) {
     headers,
     body,
   });
+  if (!res.ok) throw res;
   return res.json();
 }
 

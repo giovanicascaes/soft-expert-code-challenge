@@ -22,9 +22,6 @@ module.exports = {
         "flat-2xl": "0 25px 0 -12px rgba(0, 0, 0, 0.25)",
         "flat-inner": "inset 0 2px 0 0 rgba(0, 0, 0, 0.06)",
       },
-      textColor: {
-        "yellow-pokemon": "#F7CC05",
-      },
     },
   },
   variants: {
