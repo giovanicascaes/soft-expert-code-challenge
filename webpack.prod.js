@@ -51,8 +51,20 @@ module.exports = merge(common, {
     minimize: true,
     minimizer: [`...`, new CssMinimizerPlugin()],
     splitChunks: {
-      chunks: "all",
-      maxAsyncSize: 249856,
+      cacheGroups: {
+        styles: {
+          name: "styles",
+          test: /\.css$/,
+          chunks: "all",
+          enforce: true,
+        },
+        vendor: {
+          chunks: "initial",
+          test: "vendor",
+          name: "vendor",
+          enforce: true,
+        },
+      },
     },
   },
   output: {

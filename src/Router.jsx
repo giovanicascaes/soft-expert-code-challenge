@@ -12,13 +12,19 @@ const getLoadablePage = (importFn) =>
     timeout: 10000,
   });
 
-const LoadableHome = getLoadablePage(() => import("~/pages/Home"));
-const LoadablePokemon = getLoadablePage(() => import("~/pages/Pokemon"));
-const LoadableNotFound = getLoadablePage(() => import("~/pages/NotFound"));
+const LoadableHome = getLoadablePage(() =>
+  import(/* webpackChunkName:'Home' */ "~/pages/Home")
+);
+const LoadablePokemon = getLoadablePage(() =>
+  import(/* webpackChunkName:'Pokemon' */ "~/pages/Pokemon")
+);
+const LoadableNotFound = getLoadablePage(() =>
+  import(/* webpackChunkName:'NotFound' */ "~/pages/NotFound")
+);
 
 export default function AppRouter() {
   return (
-    <Router basename="/soft-expert-code-challenge">
+    <Router>
       <Switch>
         <Route path="/" exact component={LoadableHome} />
         <Route
