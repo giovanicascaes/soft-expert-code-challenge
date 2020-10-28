@@ -18,7 +18,7 @@ const LoadableNotFound = getLoadablePage(() => import("~/pages/NotFound"));
 
 export default function AppRouter() {
   return (
-    <Router>
+    <Router basename="/soft-expert-code-challenge">
       <Switch>
         <Route path="/" exact component={LoadableHome} />
         <Route

@@ -1,8 +1,9 @@
 const path = require("path");
 const webpack = require("webpack");
+const { merge } = require("webpack-merge");
+const common = require("./webpack.common.js");
 
-module.exports = {
-  entry: "./src/index.jsx",
+module.exports = merge(common, {
   mode: "development",
   module: {
     rules: [
@@ -14,7 +15,20 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                auto: true,
+                localIdentName: "[path][name]__[local]--[hash:base64:5]",
+                exportLocalsConvention: "camelCase",
+              },
+            },
+          },
+          "postcss-loader",
+        ],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
@@ -26,23 +40,12 @@ module.exports = {
       },
     ],
   },
-  resolve: {
-    alias: {
-      "~": path.resolve(__dirname, "./src"),
-    },
-    extensions: ["*", ".js", ".jsx"],
-  },
-  output: {
-    path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/",
-    filename: "bundle.js",
-  },
   devServer: {
     contentBase: path.join(__dirname, "public/"),
     port: 3000,
     publicPath: "http://localhost:3000/dist/",
     hotOnly: true,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
-};
+});

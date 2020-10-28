@@ -1,8 +1,8 @@
-.flipWrapper {
+.flip-wrapper {
   perspective: 1000px;
 }
 
-.flipWrapper.flip .flipper {
+.flip-wrapper.flip .flipper {
   transform: rotateY(180deg);
 }
 
