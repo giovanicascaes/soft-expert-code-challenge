@@ -5,7 +5,7 @@ import NotFoundPsyduck from "~/assets/img/not-found-psyduck.jpeg";
 export default function NotFound() {
   return (
     <div className="flex flex-1 flex-col items-center justify-center">
-      <img className="w-40" src={NotFoundPsyduck} alt="Psyduck's confused" />
+      <img className="h-24" src={NotFoundPsyduck} alt="Psyduck's confused" />
       <span className="text-4xl font-light text-center text-gray-500 mt-4">
         Not found
       </span>
